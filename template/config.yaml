@@ -1,0 +1,98 @@
+# ═══════════════════════════════════════════════════
+# IMA Framework — Configuration
+# ═══════════════════════════════════════════════════
+#
+# This is your agency-level configuration.
+# Edit this file with your defaults, then create
+# client-specific configs in clients/[client-name]/config.yaml
+# ═══════════════════════════════════════════════════
+
+# ── Agency Info ──────────────────────────────────
+agency:
+  name: "My Agency"
+  # Set to true if you manage multiple clients
+  multi_client: true
+
+# ── Default Niche (override per client) ─────────
+niche:
+  primary: ""           # e.g., "sustainable fashion", "fitness tech", "SaaS"
+  sub_niches: []        # e.g., ["eco-friendly clothing", "ethical fashion"]
+  keywords: []          # e.g., ["sustainable", "eco", "ethical", "green"]
+
+# ── Default Target Audience ─────────────────────
+target_audience:
+  age_range: "18-35"
+  gender: "all"                 # all, male, female, non-binary
+  locations: []                 # e.g., ["US", "UK", "CA"]
+  interests: []
+  income_level: "middle"        # low, middle, upper-middle, high
+
+# ── Default Platform Preferences ────────────────
+platforms:
+  primary: "instagram"
+  secondary: []                 # e.g., ["tiktok", "youtube"]
+  # Platform-specific settings
+  instagram:
+    content_types: ["reels", "posts", "stories"]
+  tiktok:
+    content_types: ["videos"]
+  youtube:
+    content_types: ["videos", "shorts"]
+
+# ── Influencer Preferences ──────────────────────
+influencer_preferences:
+  tiers:
+    - nano       # 1K - 10K
+    - micro      # 10K - 50K
+    # - mid      # 50K - 500K
+    # - macro    # 500K - 1M
+    # - mega     # 1M+
+  min_engagement_rate: 2.0      # Minimum ER percentage
+  min_followers: 1000
+  max_followers: 100000
+  must_have:
+    - "niche relevance"
+    - "authentic engagement"
+  deal_breakers:
+    - "fake followers"
+    - "brand safety issues"
+
+# ── Budget ──────────────────────────────────────
+budget:
+  currency: "USD"
+  monthly_range: ""             # e.g., "$5,000 - $15,000"
+  per_influencer_max: ""        # e.g., "$1,000"
+  compensation_model: "hybrid"  # flat_fee, product_only, hybrid, performance
+
+# ── Output Preferences ──────────────────────────
+output:
+  primary_format: "markdown"    # markdown, csv, notion, google-sheets
+  secondary_format: "csv"
+  save_to: "outputs"            # Relative to client directory or root
+  include_sources: true
+  include_timestamps: true
+
+# ── Vetting Preferences ─────────────────────────
+vetting:
+  depth: "standard"             # lite, standard, deep
+  require_brand_safety: true
+  auto_flag_red_flags: true
+
+# ── Optional Integrations ───────────────────────
+# These are optional power-ups. The framework works fully without them.
+integrations:
+  notion:
+    enabled: false
+    # api_key: ""
+    # database_id: ""
+  google_sheets:
+    enabled: false
+    # credentials_path: ""
+    # spreadsheet_id: ""
+  # social_media_apis:
+  #   instagram:
+  #     enabled: false
+  #     api_key: ""
+  #   tiktok:
+  #     enabled: false
+  #     api_key: ""

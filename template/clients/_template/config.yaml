@@ -1,0 +1,57 @@
+# ═══════════════════════════════════════════════════
+# Client Configuration — [Client Name]
+# ═══════════════════════════════════════════════════
+#
+# This file overrides the agency-level config.yaml
+# for this specific client. Only set fields that
+# differ from the agency defaults.
+# ═══════════════════════════════════════════════════
+
+# ── Client Info ──────────────────────────────────
+client:
+  name: ""                      # e.g., "Acme Skincare"
+  website: ""                   # e.g., "https://acme-skincare.com"
+  contact: ""                   # Client POC name
+  email: ""                     # Client POC email
+
+# ── Niche ────────────────────────────────────────
+niche:
+  primary: ""                   # e.g., "skincare"
+  sub_niches: []                # e.g., ["anti-aging", "natural skincare"]
+  keywords: []                  # e.g., ["skincare routine", "clean beauty"]
+
+# ── Brand Identity ───────────────────────────────
+brand:
+  voice: ""                     # e.g., "warm, educational, empowering"
+  aesthetic: ""                 # e.g., "clean, minimal, pastel tones"
+  values: []                    # e.g., ["cruelty-free", "sustainability", "inclusivity"]
+  competitors: []               # e.g., ["Glossier", "The Ordinary", "CeraVe"]
+
+# ── Target Audience ──────────────────────────────
+target_audience:
+  age_range: ""
+  gender: ""
+  locations: []
+  interests: []
+  income_level: ""
+
+# ── Platform Preferences ────────────────────────
+platforms:
+  primary: ""
+  secondary: []
+
+# ── Budget ───────────────────────────────────────
+budget:
+  currency: "USD"
+  total_campaign: ""            # e.g., "$10,000"
+  per_influencer_max: ""        # e.g., "$500"
+
+# ── Campaign Goals ───────────────────────────────
+goals:
+  primary: ""                   # e.g., "brand awareness"
+  kpis: []                      # e.g., ["reach > 500K", "ER > 3%", "100 link clicks"]
+
+# ── Notes ────────────────────────────────────────
+notes: |
+  Add any client-specific notes, preferences, 
+  or requirements here.
