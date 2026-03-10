@@ -8,10 +8,10 @@
 
 ```bash
 # Create a new IMA workspace
-npx create-ima my-agency
+npx ima-agent my-agency
 
 # Or install in the current directory
-npx create-ima .
+npx ima-agent .
 ```
 
 ## What You Get

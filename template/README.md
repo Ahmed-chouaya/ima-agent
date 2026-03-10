@@ -6,7 +6,7 @@
 
 ```bash
 # Install the framework
-npx create-ima my-agency
+npx ima-agent my-agency
 
 # Navigate to the directory
 cd my-agency
