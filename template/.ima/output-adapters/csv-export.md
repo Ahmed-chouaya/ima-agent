@@ -14,17 +14,17 @@ Name,Handle,Platform,Followers,Following,ER%,Avg_Likes,Avg_Comments,Niche_Releva
 
 ### Campaign Performance CSV
 ```csv
-Influencer,Platform,Tier,Spend_USD,Impressions,Reach,Likes,Comments,Saves,Shares,Clicks,Conversions,Revenue_USD,ER%,CPM,CPE,CPC,CAC,ROAS,Rating
+Influencer,Profile_URL,Platform,Tier,Spend_USD,Impressions,Reach,Likes,Comments,Saves,Shares,Clicks,Conversions,Revenue_USD,ER%,CPM,CPE,CPC,CAC,ROAS,Rating
 ```
 
 ### Outreach Tracker CSV
 ```csv
-Influencer,Handle,Platform,Priority,Contact_Method,Email,Status,Sent_Date,Response_Date,Rate_Quote,Counter_Offer,Final_Rate,Contract_Status,Notes
+Influencer,Handle,Profile_URL,Platform,Priority,Contact_Method,Email,Status,Sent_Date,Response_Date,Rate_Quote,Counter_Offer,Final_Rate,Contract_Status,Notes
 ```
 
 ### Competitor Analysis CSV
 ```csv
-Competitor,Platform,Influencer_Name,Influencer_Handle,Tier,Content_Type,Est_Frequency,Est_Monthly_Spend,Exclusivity,Notes
+Competitor,Platform,Influencer_Name,Influencer_Handle,Profile_URL,Tier,Content_Type,Est_Frequency,Est_Monthly_Spend,Exclusivity,Notes
 ```
 
 ## Formatting Rules

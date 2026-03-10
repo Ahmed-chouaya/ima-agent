@@ -57,6 +57,7 @@ If a Notion MCP server is available, use its tools to:
 | Property | Type | Description |
 |----------|------|-------------|
 | Influencer | Relation | Link to Influencer database |
+| Profile URL | URL | Link to profile |
 | Campaign | Relation | Link to Campaign database |
 | Status | Select | Not Started, Sent, Followed Up, Responded, Negotiating, Contracted, Declined |
 | Contact Method | Select | Email, DM, Management |

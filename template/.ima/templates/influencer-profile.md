@@ -6,12 +6,13 @@
 |-------|-------|
 | **Name** | |
 | **Handle** | |
+| **Profile URL** | |
 | **Platform(s)** | |
 | **Follower Count** | |
 | **Following Count** | |
 | **Bio** | |
 | **Location** | |
-| **Website/Link** | |
+| **Website/Other Link** | |
 | **Email** | |
 | **Category** | |
 | **Verified** | Yes / No |

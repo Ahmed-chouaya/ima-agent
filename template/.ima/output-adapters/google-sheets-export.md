@@ -45,44 +45,48 @@ When the user wants to export IMA research data to Google Sheets for collaborati
 |:------:|--------|--------|
 | A | Influencer | Text |
 | B | Platform | Text |
-| C | Tier | Text |
-| D | Spend (USD) | Currency |
-| E | Impressions | Number |
-| F | Reach | Number |
-| G | Likes | Number |
-| H | Comments | Number |
-| I | Saves | Number |
-| J | Clicks | Number |
-| K | Conversions | Number |
-| L | Revenue (USD) | Currency |
-| M | ER (%) | Formula: `=(G+H+I)/F*100` |
-| N | CPM | Formula: `=D/E*1000` |
-| O | CPE | Formula: `=D/(G+H+I)` |
-| P | CPC | Formula: `=D/J` |
-| Q | ROAS | Formula: `=L/D` |
-| R | Rating | Text |
+| C | Profile URL | URL |
+| D | Tier | Text |
+| E | Spend (USD) | Currency |
+| F | Impressions | Number |
+| G | Reach | Number |
+| H | Likes | Number |
+| I | Comments | Number |
+| J | Saves | Number |
+| K | Clicks | Number |
+| L | Conversions | Number |
+| M | Revenue (USD) | Currency |
+| N | ER (%) | Formula: `=(H+I+J)/G*100` |
+| O | CPM | Formula: `=E/F*1000` |
+| P | CPE | Formula: `=E/(H+I+J)` |
+| Q | CPC | Formula: `=E/K` |
+| R | ROAS | Formula: `=L/E` |
+| S | Rating | Text |
 
 #### Outreach Tracker Sheet
 **Tab name:** `Outreach Tracker`
+
+ **Tab name:** `Outreach Tracker`
 
 | Column | Header |
 |:------:|--------|
 | A | Influencer |
 | B | Handle |
-| C | Platform |
-| D | Priority (1/2/3) |
-| E | Contact Method |
-| F | Email |
-| G | Status |
-| H | Date Sent |
-| I | Follow-Up 1 Date |
-| J | Follow-Up 2 Date |
-| K | Response Date |
-| L | Rate Quoted |
-| M | Counter Offer |
-| N | Final Rate |
-| O | Contract Status |
-| P | Notes |
+| C | Profile URL |
+| D | Platform |
+| E | Priority (1/2/3) |
+| F | Contact Method |
+| G | Email |
+| H | Status |
+| I | Date Sent |
+| J | Follow-Up 1 Date |
+| K | Follow-Up 2 Date |
+| L | Response Date |
+| M | Rate Quoted |
+| N | Counter Offer |
+| O | Final Rate |
+| P | Contract Status |
+| Q | Notes |
 
 ### Output Format
 When generating Google Sheets-ready data:

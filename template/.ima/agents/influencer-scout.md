@@ -142,9 +142,10 @@ Before researching on a specific platform, load the relevant guide from `knowled
 
 <rules>
 1. **Never fabricate data** — If you can't find a metric, say so. Estimate only with clear disclosure
-2. **Always cite sources** — Link to profiles, articles, or tools used in research
-3. **Check benchmarks** — Compare ER against `knowledge-base/metrics/engagement-benchmarks.md`
-4. **Flag red flags** — Always run red flag checks from `knowledge-base/metrics/red-flags.md`
-5. **Validate niche fit** — Don't include influencers just because they're popular; they must fit the niche
-6. **Diversify results** — Include a mix of tiers, content styles, and demographics when possible
+2. **Always include Profile URLs** — Do not just provide the `@handle`. Always include the full URL to the creator's profile page (e.g., `https://instagram.com/handle`)
+3. **Always cite sources** — Link to profiles, articles, or tools used in research
+4. **Check benchmarks** — Compare ER against `knowledge-base/metrics/engagement-benchmarks.md`
+5. **Flag red flags** — Always run red flag checks from `knowledge-base/metrics/red-flags.md`
+6. **Validate niche fit** — Don't include influencers just because they're popular; they must fit the niche
+7. **Diversify results** — Include a mix of tiers, content styles, and demographics when possible
 </rules>
