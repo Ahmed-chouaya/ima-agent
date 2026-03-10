@@ -1,0 +1,36 @@
+# IMA Framework — Influencer Marketing Agent
+
+You are working within the IMA Framework, an agentic methodology for influencer marketing research and analysis.
+
+## Agent System
+
+This project contains 7 specialized AI agent personas in `.ima/agents/`. When the user references a command below, read the corresponding agent file and adopt that persona fully.
+
+## Command Mapping
+
+- `/ima` or "start session" → Read `.ima/agents/orchestrator.md` — Manage sessions and clients
+- `/scout` or "find influencers" → Read `.ima/agents/influencer-scout.md` — Discover and profile influencers
+- `/brand` or "analyze brand" → Read `.ima/agents/brand-analyst.md` — Brand and competitor analysis
+- `/campaign` or "plan campaign" → Read `.ima/agents/campaign-strategist.md` — Campaign design
+- `/audit` or "vet influencer" → Read `.ima/agents/content-auditor.md` — Authenticity and safety checks
+- `/roi` or "analyze performance" → Read `.ima/agents/roi-analyst.md` — ROI and metrics
+- `/outreach` or "draft outreach" → Read `.ima/agents/outreach-manager.md` — Outreach messaging
+
+## Key Rules
+
+1. Always read the agent persona file before executing any command
+2. Load the active client config from `clients/[client-name]/config.yaml`
+3. Save all outputs to the active client's directory (`clients/[client-name]/[type]/`)
+4. Reference `.ima/knowledge-base/` for benchmarks, platform data, and compliance
+5. Use `.ima/templates/` for structured output formatting
+6. Follow `.ima/workflows/` for step-by-step research processes
+
+## Key Files
+
+- `AGENTS.md` — Full command reference with all sub-commands
+- `config.yaml` — Agency-level configuration
+- `.ima/agents/` — Agent personas
+- `.ima/workflows/` — Research workflows
+- `.ima/templates/` — Output templates
+- `.ima/knowledge-base/` — Platform guides, benchmarks, compliance
+- `clients/` — Client workspaces

@@ -2,16 +2,22 @@
 
 const fs = require('fs');
 const path = require('path');
+const readline = require('readline');
 
 // ─────────────────────────────────────────────
 // IMA Framework — Scaffolding CLI
-// Usage: npx create-ima [target-directory]
+// Usage: npx ima-agent [target-directory] [--tool claude|opencode|cursor]
 // ─────────────────────────────────────────────
 
 const BANNER = `
 ╔══════════════════════════════════════════════════╗
 ║                                                  ║
-║   🎯  IMA Framework — Influencer Marketing Agent ║
+║    ██╗███╗   ███╗ █████╗                         ║
+║    ██║████╗ ████║██╔══██╗   FRAMEWORK            ║
+║    ██║██╔████╔██║███████║   AGENT                ║
+║    ██║██║╚██╔╝██║██╔══██║                        ║
+║    ██║██║ ╚═╝ ██║██║  ██║                        ║
+║    ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝                        ║
 ║                                                  ║
 ║   Transform any AI tool into an influencer        ║
 ║   marketing research powerhouse.                  ║
@@ -19,14 +25,19 @@ const BANNER = `
 ╚══════════════════════════════════════════════════╝
 `;
 
+const TOOL_OPTIONS = {
+  '1': { name: 'claude', label: 'Claude Code (Anthropic)', description: 'Creates CLAUDE.md + .claude/commands/' },
+  '2': { name: 'opencode', label: 'OpenCode', description: 'Creates AGENTS.md + .opencode/agents/' },
+  '3': { name: 'cursor', label: 'Cursor', description: 'Creates .cursorrules' },
+  '4': { name: 'none', label: 'Manual / Other', description: 'Base files only, configure manually' },
+};
+
 function copyDirSync(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
   const entries = fs.readdirSync(src, { withFileTypes: true });
-
   for (const entry of entries) {
     const srcPath = path.join(src, entry.name);
     const destPath = path.join(dest, entry.name);
-
     if (entry.isDirectory()) {
       copyDirSync(srcPath, destPath);
     } else {
@@ -48,80 +59,186 @@ function countFiles(dir) {
   return count;
 }
 
+function installBase(templateDir, targetDir) {
+  // Copy core framework files
+  const imaSrc = path.join(templateDir, '.ima');
+  const imaDest = path.join(targetDir, '.ima');
+  copyDirSync(imaSrc, imaDest);
+
+  // Copy config
+  fs.copyFileSync(
+    path.join(templateDir, 'config.yaml'),
+    path.join(targetDir, 'config.yaml')
+  );
+
+  // Copy AGENTS.md
+  fs.copyFileSync(
+    path.join(templateDir, 'AGENTS.md'),
+    path.join(targetDir, 'AGENTS.md')
+  );
+
+  // Copy README
+  fs.copyFileSync(
+    path.join(templateDir, 'README.md'),
+    path.join(targetDir, 'README.md')
+  );
+
+  // Create clients directory with template
+  const clientsSrc = path.join(templateDir, 'clients');
+  const clientsDest = path.join(targetDir, 'clients');
+  copyDirSync(clientsSrc, clientsDest);
+}
+
+function installToolIntegration(templateDir, targetDir, tool) {
+  const toolDir = path.join(templateDir, 'tools', tool);
+
+  if (!fs.existsSync(toolDir)) {
+    console.log(`   ⚠️  No integration template found for: ${tool}`);
+    return;
+  }
+
+  // Copy all tool-specific files to the target root
+  const entries = fs.readdirSync(toolDir, { withFileTypes: true });
+  for (const entry of entries) {
+    const srcPath = path.join(toolDir, entry.name);
+    const destPath = path.join(targetDir, entry.name);
+    if (entry.isDirectory()) {
+      copyDirSync(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+function printSuccess(targetDir, toolName) {
+  const fileCount = countFiles(targetDir);
+
+  const toolFiles = {
+    claude: '   🔧 Claude Code: CLAUDE.md + .claude/commands/ (7 slash commands)',
+    opencode: '   🔧 OpenCode: AGENTS.md + .opencode/agents/ (6 agent files)',
+    cursor: '   🔧 Cursor: .cursorrules',
+    none: '   🔧 Manual setup: Use AGENTS.md as reference',
+  };
+
+  console.log('');
+  console.log('✅ IMA Framework installed successfully!');
+  console.log('');
+  console.log(`   📂 ${fileCount} files created in ${targetDir}`);
+  console.log('   📋 7 AI agent personas');
+  console.log('   🔄 7 research workflows');
+  console.log('   📝 7 output templates');
+  console.log('   📊 8 knowledge base references');
+  console.log('   ✅ 3 validation checklists');
+  console.log('   📤 4 output adapters');
+  console.log(toolFiles[toolName] || '');
+  console.log('');
+  console.log('─────────────────────────────────────────');
+  console.log('');
+  console.log('🚀 Next Steps:');
+  console.log('');
+  console.log('   1. Edit config.yaml with your agency info');
+  console.log('   2. Open this folder in your AI tool');
+
+  if (toolName === 'claude') {
+    console.log('   3. Type /ima to start a session');
+    console.log('   4. Type /scout to find influencers');
+  } else if (toolName === 'opencode') {
+    console.log('   3. Switch to the Scout agent and ask to find influencers');
+    console.log('   4. Or type "/ima start" to initialize');
+  } else if (toolName === 'cursor') {
+    console.log('   3. Tell Cursor: "Read AGENTS.md and start a session"');
+    console.log('   4. Use /scout, /brand, /campaign as prompts');
+  } else {
+    console.log('   3. Tell your AI: "Read AGENTS.md and start a session"');
+    console.log('   4. Reference the slash commands in AGENTS.md');
+  }
+
+  console.log('');
+  console.log('─────────────────────────────────────────');
+  console.log('');
+  console.log('🎯 Happy researching!');
+  console.log('');
+}
+
 function main() {
   console.log(BANNER);
 
-  // Determine target directory
   const args = process.argv.slice(2);
-  const targetDir = path.resolve(args[0] || '.');
 
-  // Check if target already has IMA
+  // Parse arguments
+  let targetDir = '.';
+  let toolFlag = null;
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--tool' && args[i + 1]) {
+      toolFlag = args[i + 1].toLowerCase();
+      i++;
+    } else if (!args[i].startsWith('-')) {
+      targetDir = args[i];
+    }
+  }
+
+  targetDir = path.resolve(targetDir);
+
+  // Check if already installed
   if (fs.existsSync(path.join(targetDir, '.ima'))) {
     console.log('⚠️  IMA framework already installed in this directory.');
     console.log('   To reinstall, remove the .ima directory first.');
     process.exit(1);
   }
 
-  // Source template directory
+  // Template directory
   const templateDir = path.join(__dirname, '..', 'template');
-
   if (!fs.existsSync(templateDir)) {
     console.error('❌ Template directory not found. Package may be corrupted.');
     process.exit(1);
   }
 
-  console.log(`📁 Installing IMA framework to: ${targetDir}\n`);
+  // If tool was specified via flag, install directly
+  if (toolFlag && ['claude', 'opencode', 'cursor', 'none'].includes(toolFlag)) {
+    console.log(`📁 Installing to: ${targetDir}`);
+    console.log(`🔧 Tool: ${toolFlag}\n`);
 
-  // Create target directory if needed
-  fs.mkdirSync(targetDir, { recursive: true });
+    fs.mkdirSync(targetDir, { recursive: true });
+    installBase(templateDir, targetDir);
+    if (toolFlag !== 'none') {
+      installToolIntegration(templateDir, targetDir, toolFlag);
+    }
+    printSuccess(targetDir, toolFlag);
+    return;
+  }
 
-  // Copy template files
-  copyDirSync(templateDir, targetDir);
+  // Interactive tool selection
+  console.log('Which AI coding tool will you use with IMA?\n');
+  Object.entries(TOOL_OPTIONS).forEach(([key, val]) => {
+    console.log(`   ${key}. ${val.label}`);
+    console.log(`      ${val.description}\n`);
+  });
 
-  // Create additional client directory structure
-  const clientsDir = path.join(targetDir, 'clients');
-  fs.mkdirSync(clientsDir, { recursive: true });
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
 
-  // Create a .gitkeep in clients
-  fs.writeFileSync(path.join(clientsDir, '.gitkeep'), '');
+  rl.question('Choose (1-4): ', (answer) => {
+    rl.close();
 
-  // Count what was installed
-  const fileCount = countFiles(targetDir);
+    const choice = TOOL_OPTIONS[answer.trim()];
+    if (!choice) {
+      console.log('\n❌ Invalid choice. Please run again and select 1-4.');
+      process.exit(1);
+    }
 
-  console.log('✅ IMA Framework installed successfully!\n');
-  console.log(`   📂 ${fileCount} files created`);
-  console.log(`   📋 7 AI agent personas`);
-  console.log(`   🔄 7 research workflows`);
-  console.log(`   📝 7 output templates`);
-  console.log(`   📊 8 knowledge base references`);
-  console.log(`   ✅ 3 validation checklists`);
-  console.log(`   📤 4 output adapters\n`);
+    console.log(`\n📁 Installing to: ${targetDir}`);
+    console.log(`🔧 Tool: ${choice.label}\n`);
 
-  console.log('─────────────────────────────────────────');
-  console.log('');
-  console.log('🚀 Quick Start:');
-  console.log('');
-  console.log('   1. Edit config.yaml with your agency/niche info');
-  console.log('   2. Add your first client:');
-  console.log('      Create a folder: clients/my-client/');
-  console.log('      Copy the client config template');
-  console.log('   3. Open this folder in your AI coding tool');
-  console.log('   4. Tell your AI: "Read AGENTS.md and start a session"');
-  console.log('');
-  console.log('📖 Available commands:');
-  console.log('   /ima start       — Initialize a session');
-  console.log('   /ima client      — Manage clients');
-  console.log('   /scout discover  — Find influencers');
-  console.log('   /brand audit     — Analyze a brand');
-  console.log('   /campaign plan   — Design a campaign');
-  console.log('   /audit full      — Vet an influencer');
-  console.log('   /outreach draft  — Craft outreach messages');
-  console.log('   /roi analyze     — Calculate ROI');
-  console.log('');
-  console.log('─────────────────────────────────────────');
-  console.log('');
-  console.log('🎯 Happy researching!');
-  console.log('');
+    fs.mkdirSync(targetDir, { recursive: true });
+    installBase(templateDir, targetDir);
+    if (choice.name !== 'none') {
+      installToolIntegration(templateDir, targetDir, choice.name);
+    }
+    printSuccess(targetDir, choice.name);
+  });
 }
 
 main();
