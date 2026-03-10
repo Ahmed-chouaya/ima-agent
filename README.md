@@ -1,5 +1,14 @@
 # ima-agent
 
+```text
+    ██╗███╗   ███╗ █████╗
+    ██║████╗ ████║██╔══██╗   FRAMEWORK
+    ██║██╔████╔██║███████║   AGENT
+    ██║██║╚██╔╝██║██╔══██║
+    ██║██║ ╚═╝ ██║██║  ██║
+    ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
+```
+
 > 🎯 Install the IMA Framework — Influencer Marketing Agent
 
 **IMA** is an agentic methodology framework that transforms any AI coding tool into a team of influencer marketing specialists. Think [BMAD](https://github.com/bmadcode/BMAD-METHOD), but for influencer marketing.
