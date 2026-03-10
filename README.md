@@ -1,4 +1,4 @@
-# create-ima
+# ima-agent
 
 > 🎯 Install the IMA Framework — Influencer Marketing Agent
 
