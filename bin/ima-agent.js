@@ -25,7 +25,7 @@ const BANNER = `
 
 const TOOL_OPTIONS = {
   '1': { name: 'claude', label: 'Claude Code (Anthropic)', description: 'Creates CLAUDE.md + .claude/commands/' },
-  '2': { name: 'opencode', label: 'OpenCode', description: 'Creates AGENTS.md + .opencode/agents/' },
+  '2': { name: 'opencode', label: 'OpenCode', description: 'Creates AGENTS.md + .opencode/(agents + commands)' },
   '3': { name: 'cursor', label: 'Cursor', description: 'Creates .cursorrules' },
   '4': { name: 'none', label: 'Manual / Other', description: 'Base files only, configure manually' },
 };
@@ -113,7 +113,7 @@ function printSuccess(targetDir, toolName) {
 
   const toolFiles = {
     claude: '   🔧 Claude Code: CLAUDE.md + .claude/commands/ (7 slash commands)',
-    opencode: '   🔧 OpenCode: AGENTS.md + .opencode/agents/ (6 agent files)',
+    opencode: '   🔧 OpenCode: .opencode/ agents (7) + commands (7)',
     cursor: '   🔧 Cursor: .cursorrules',
     none: '   🔧 Manual setup: Use AGENTS.md as reference',
   };
@@ -141,8 +141,8 @@ function printSuccess(targetDir, toolName) {
     console.log('   3. Type /ima to start a session');
     console.log('   4. Type /scout to find influencers');
   } else if (toolName === 'opencode') {
-    console.log('   3. Switch to the Scout agent and ask to find influencers');
-    console.log('   4. Or type "/ima start" to initialize');
+    console.log('   3. Type /ima to start a session');
+    console.log('   4. Type /scout to find influencers');
   } else if (toolName === 'cursor') {
     console.log('   3. Tell Cursor: "Read AGENTS.md and start a session"');
     console.log('   4. Use /scout, /brand, /campaign as prompts');
