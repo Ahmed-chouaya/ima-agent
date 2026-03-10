@@ -10,19 +10,17 @@ const readline = require('readline');
 // ─────────────────────────────────────────────
 
 const BANNER = `
-╔══════════════════════════════════════════════════╗
-║                                                  ║
-║    ██╗███╗   ███╗ █████╗                         ║
-║    ██║████╗ ████║██╔══██╗   FRAMEWORK            ║
-║    ██║██╔████╔██║███████║   AGENT                ║
-║    ██║██║╚██╔╝██║██╔══██║                        ║
-║    ██║██║ ╚═╝ ██║██║  ██║                        ║
-║    ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝                        ║
-║                                                  ║
-║   Transform any AI tool into an influencer        ║
-║   marketing research powerhouse.                  ║
-║                                                  ║
-╚══════════════════════════════════════════════════╝
+
+    ██╗███╗   ███╗ █████╗
+    ██║████╗ ████║██╔══██╗   FRAMEWORK
+    ██║██╔████╔██║███████║   AGENT
+    ██║██║╚██╔╝██║██╔══██║
+    ██║██║ ╚═╝ ██║██║  ██║
+    ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
+
+   Transform any AI tool into an influencer
+   marketing research powerhouse.
+
 `;
 
 const TOOL_OPTIONS = {
