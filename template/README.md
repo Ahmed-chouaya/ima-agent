@@ -1,129 +1,65 @@
-# IMA Framework — Influencer Marketing Agent
+# 🎯 Your IMA Workspace
 
-```text
-    ██╗███╗   ███╗ █████╗
-    ██║████╗ ████║██╔══██╗   FRAMEWORK
-    ██║██╔████╔██║███████║   AGENT
-    ██║██║╚██╔╝██║██╔══██║
-    ██║██║ ╚═╝ ██║██║  ██║
-    ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
-```
+Welcome to your new Influencer Marketing Agency workspace. This folder contains the specialized agents, workflows, and knowledge base required to run professional-grade campaigns.
 
-> Transform any AI coding tool into a team of influencer marketing specialists.
+---
 
-## Quick Start
+## 🚀 Getting Started
 
-```bash
-# Install the framework
-npx ima-agent my-agency
+1. **Agency Setup**: Edit `config.yaml` to set your agency's name, primary niche, and default output preferences.
+2. **AI Tool Connection**: Open this folder in your preferred AI assistant (Claude Code, Cursor, OpenCode).
+3. **Start a Session**: Tell your AI Assistant:
+   > *"Read AGENTS.md and start a session as Abu Lahya (ST)."*
 
-# Navigate to the directory
-cd my-agency
-```
+---
 
-Then:
-1. Edit `config.yaml` with your agency info
-2. Open the folder in your AI coding tool (Claude Code, Cursor, OpenCode, etc.)
-3. Tell your AI: *"Read AGENTS.md and start a session"*
+## 📋 Core Commands & Agents
 
-## What This Is
+Invoke agents using their **Trigger Codes** (e.g., `IH`, `ST`, `SD`) for the fastest response.
 
-IMA is an **agentic methodology framework** — like [BMAD](https://github.com/bmadcode/BMAD-METHOD) but for influencer marketing. It gives your AI coding tool structured personas, workflows, and knowledge to perform professional-grade influencer marketing research.
+| Agent | Trigger | Role | Primary Workflow |
+|---|---|---|---|
+| 🎯 **Abu Lahya** | `ST` | Orchestrator | Start session / Manage clients |
+| 🧙 **Oussema** | `AS` | Guided Wizard | Multi-step assistance / Intake |
+| 🔍 **Younes** | `SD` | Scout | Influencer discovery & profiling |
+| 🏢 **Dylan** | `BA` | Brand Analyst | Brand audits & competitor research |
+| 📋 **Kushtrim** | `CP` | Strategist | Campaign planning & brief design |
+| 🔎 **Ahmed** | `AF` | Auditor | Content & authenticity vetting |
+| 📊 **Michael** | `RF` | ROI Analyst | Performance analysis & forecasting |
+| 📧 **Ammar** | **OS** | Outreach | Sequence design & drafting |
 
-**No APIs required.** The AI uses web research, structured analysis, and your knowledge base to deliver results.
+> 🆘 **Stuck?** Use `/ima-help` or `IH` anytime. The system will analyze your work and tell you what to do next.
 
-## How It Works
+---
 
-```
-You: "Find me 20 micro influencers in sustainable fashion on Instagram"
+## 🎭 Collaboration (Party Mode)
 
-IMA: Loads your config → Activates the Scout agent → Runs the discovery 
-     workflow → Profiles each influencer → Scores and ranks them → 
-     Delivers a formatted shortlist to your client folder
-```
+Need a full strategy discussion? Use `/ima-party-mode` or `PM`. 
+This activates multiple agents at once to debate your strategy, brainstorm creative directions, and ensure no detail is missed.
 
-## Your Workspace
+---
 
-After installation, your folder looks like this:
+## 📁 Project Structure
 
-```
-my-agency/
-├── config.yaml              # Agency-level settings
-├── AGENTS.md                # Agent registry & all commands
-├── .ima/                    # Framework core (agents, workflows, templates, knowledge)
-│   ├── agents/              # 7 specialist AI personas
-│   ├── workflows/           # 7 step-by-step research processes
-│   ├── templates/           # 7 output templates
-│   ├── knowledge-base/      # Platform guides, benchmarks, compliance
-│   ├── checklists/          # Validation checklists
-│   └── output-adapters/     # CSV, Notion, Google Sheets formatters
-└── clients/                 # Client workspaces (organized automatically)
-    ├── _template/           # Client config template
-    ├── client-1/            # Each client gets their own folder
-    └── client-2/
-```
+- `config.yaml`: Global agency settings.
+- `AGENTS.md`: Full technical reference for all triggers and commands.
+- `clients/`: All your client data lives here.
+  - `_template/`: Blueprint for new client folders.
+  - `[client-name]/`: Organized subfolders for discovery, audits, and campaigns.
+- `.ima/`: The framework engine. 
+  - `agents/`: AI persona definitions (YAML).
+  - `workflows/`: Step-by-step PDF-style guides for research.
+  - `knowledge-base/`: The "Brain" (benchmarks, platform guides, compliance).
+  - `templates/`: Professional report templates.
 
-## Commands
+---
 
-| Command | Agent | What It Does |
-|---------|-------|-------------|
-| `/ima start` | Orchestrator | Start a new session |
-| `/ima client add "Name"` | Orchestrator | Create a new client workspace |
-| `/ima client switch "Name"` | Orchestrator | Switch to a different client |
-| `/scout discover [criteria]` | Scout | Find influencers in any niche |
-| `/brand audit [brand]` | Brand Analyst | Analyze a brand's positioning |
-| `/campaign plan [brief]` | Strategist | Design a full campaign |
-| `/audit full [handle]` | Auditor | Deep-vet an influencer |
-| `/outreach draft [influencer]` | Outreach | Craft personalized outreach |
-| `/roi analyze [data]` | ROI Analyst | Calculate campaign performance |
+## 🛠️ Powering Up
 
-## Client Management
+To get more accurate data, consider connecting these in `config.yaml`:
+- **YouTube Data API**: Allows Younes (Scout) to pull exact metrics directly from YouTube.
+- **Influencer Data APIs**: Connect third-party providers (Modash, BrightData) for bulk discovery.
 
-IMA organizes all research by client:
+---
 
-```bash
-# Add a new client
-/ima client add "Acme Skincare"
-
-# Switch between clients
-/ima client switch "Fitness Brand"
-
-# List all clients
-/ima client list
-```
-
-Each client gets their own folder with separate configs and organized outputs:
-```
-clients/acme-skincare/
-├── config.yaml    # Client-specific niche, audience, budget
-├── discovery/     # Influencer shortlists
-├── audits/        # Vetting reports
-├── campaigns/     # Campaign proposals
-├── outreach/      # Outreach sequences
-└── reports/       # Performance reports
-```
-
-## Works With Any AI Tool
-
-IMA is tool-agnostic — it works with any AI that can read markdown files:
-- **Claude Code** (Anthropic)
-- **Cursor** (Anysphere)
-- **OpenCode** (any LLM)
-- **Windsurf** (Codeium)
-- **GitHub Copilot**
-- And more...
-
-## What's Inside
-
-| Component | Count | Description |
-|-----------|:-----:|-------------|
-| **Agent Personas** | 7 | Specialist AI roles with deep expertise |
-| **Workflows** | 7 | Step-by-step research processes |
-| **Templates** | 7 | Structured output formats |
-| **Knowledge Base** | 8 | Platform guides, benchmarks, compliance |
-| **Checklists** | 3 | Validation checklists |
-| **Output Adapters** | 4 | CSV, Markdown, Notion, Google Sheets |
-
-## License
-
-MIT
+*For full technical details, refer to [AGENTS.md](AGENTS.md).*
