@@ -1,0 +1,36 @@
+# NPM Tarballs
+*.tgz
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Optional npm cache directory
+.npm
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Test coverage
+coverage/
+*.lcov
+
+# Client secrets (don't commit these!)
+template/config.yaml
+clients/*/config.yaml
+!template/config.yaml # Keep the template itself, but ignore filled versions if applicable
+# Usually we keep the template. In this framework, template/config.yaml is the base.
+# But client configs should definitely be ignored.
+clients/**/artifacts/
+clients/**/outputs/
