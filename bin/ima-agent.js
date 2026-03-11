@@ -410,34 +410,62 @@ async function main() {
   }
 
   targetDir = path.resolve(targetDir);
-
-  // Check if already installed
-  if (fs.existsSync(path.join(targetDir, '.ima'))) {
-    console.log('⚠️  IMA framework already installed in this directory.');
-    console.log('   To reinstall, remove the .ima directory first.');
-    process.exit(1);
-  }
-
-  // Template directory
   const templateDir = path.join(__dirname, '..', 'template');
   if (!fs.existsSync(templateDir)) {
     console.error('❌ Template directory not found. Package may be corrupted.');
     process.exit(1);
   }
 
-  // Non-interactive mode (--tool flag + --skip-wizard)
-  if (toolFlag && ['claude', 'opencode', 'cursor', 'none'].includes(toolFlag) && skipWizard) {
-    console.log(`📁 Installing to: ${targetDir}`);
-    console.log(`🔧 Tool: ${toolFlag}\n`);
+  // Check if already installed
+  const isInstalled = fs.existsSync(path.join(targetDir, '.ima'));
+  
+  if (isInstalled && !skipWizard) {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
 
-    fs.mkdirSync(targetDir, { recursive: true });
-    installBase(templateDir, targetDir);
-    if (toolFlag !== 'none') {
-      installToolIntegration(templateDir, targetDir, toolFlag);
+    console.log('⚠️  IMA framework already detected in this directory.');
+    const answer = await ask(rl, '   Would you like to update to the latest version? (y/N): ');
+    rl.close();
+
+    if (answer.toLowerCase() === 'y') {
+      console.log('\n🚀 Updating IMA Framework...');
+      
+      // Update core engine
+      console.log('   📁 Updating engine (.ima/)...');
+      copyDirSync(path.join(templateDir, '.ima'), path.join(targetDir, '.ima'));
+
+      // Update registries
+      console.log('   📝 Updating registries (AGENTS.md, README.md)...');
+      fs.copyFileSync(path.join(templateDir, 'AGENTS.md'), path.join(targetDir, 'AGENTS.md'));
+      fs.copyFileSync(path.join(templateDir, 'README.md'), path.join(targetDir, 'README.md'));
+
+      // Update client template (but not existing clients)
+      console.log('   📋 Updating client blueprints...');
+      copyDirSync(path.join(templateDir, 'clients', '_template'), path.join(targetDir, 'clients', '_template'));
+
+      // Detect and update tool integrations
+      if (fs.existsSync(path.join(targetDir, 'CLAUDE.md'))) {
+        console.log('   🔧 Updating Claude Code integration...');
+        installToolIntegration(templateDir, targetDir, 'claude');
+      } else if (fs.existsSync(path.join(targetDir, '.opencode'))) {
+        console.log('   🔧 Updating OpenCode integration...');
+        installToolIntegration(templateDir, targetDir, 'opencode');
+      } else if (fs.existsSync(path.join(targetDir, '.cursorrules'))) {
+        console.log('   🔧 Updating Cursor rules...');
+        installToolIntegration(templateDir, targetDir, 'cursor');
+      }
+
+      console.log('\n✅ Update complete! Your configuration and client data were preserved.\n');
+      return;
+    } else {
+      console.log('\n⏭️  Update cancelled.\n');
+      process.exit(0);
     }
-    const fileCount = countFiles(targetDir);
-    console.log(`\n✅ Installed ${fileCount} files. Edit config.yaml to personalize.\n`);
-    return;
+  } else if (isInstalled && skipWizard) {
+    console.log('⚠️  IMA already installed. Skipping (--skip-wizard active).');
+    process.exit(0);
   }
 
   // Interactive wizard
