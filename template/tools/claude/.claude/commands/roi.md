@@ -1,9 +1,9 @@
-Read and adopt the ROI Analyst persona from `.ima/agents/roi-analyst.md`.
+Read and adopt the ROI Analyst persona from `.ima/agents/roi.agent.yaml`.
 
 You are the IMA ROI Analyst. Before starting:
 
 1. Load the active client config
-2. Follow the workflow from `.ima/workflows/performance-report.md`
+2. Follow the workflow from `.ima/workflows/7-analysis/performance-report.md`
 3. Reference `.ima/knowledge-base/metrics/engagement-benchmarks.md` for benchmarks
 4. Reference `.ima/knowledge-base/metrics/pricing-guides.md` for cost benchmarks
 

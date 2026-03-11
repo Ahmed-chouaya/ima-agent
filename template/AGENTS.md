@@ -1,144 +1,147 @@
 # IMA Agent Registry
 
-> All available agents and their commands. Tell your AI to read this file to get started.
+> Invoke the `ima-help` skill anytime to get advice on what to do next.
 
-## Quick Start
+## The IMA Team
+
+| Agent | Skill ID | Name | Triggers | Primary Workflows |
+|-------|----------|------|----------|-------------------|
+| 🎯 Orchestrator | `ima-orchestrator` | Abu Lahya | `ST`, `CA`, `CS`, `CL`, `EX`, `HO` | Start Session, Client Management, Routing, Export |
+| 🧙 Guided Wizard | `ima-assist` | Oussema | `AS`, `AR`, `AM`, `AX`, `AE` | Guided Wizard, Smart Intake, Progress Tracking |
+| 🔍 Scout | `ima-scout` | Younes | `SD`, `SP`, `SC`, `SE`, `ST` | Discover, Profile, Compare, Expand, Trending |
+| 🏢 Brand Analyst | `ima-brand` | Dylan | `BA`, `BC`, `BD`, `BF`, `BB` | Brand Audit, Competitors, Audience, Fit, Compare |
+| 📋 Campaign | `ima-campaign` | Kushtrim | `CP`, `CB`, `CG`, `CC`, `CM` | Campaign Plan, Brief, Budget, Calendar, Match |
+| 🔎 Auditor | `ima-auditor` | Ahmed | `AF`, `AC`, `AA`, `AS`, `AB` | Full Audit, Content, Authenticity, Safety, Batch |
+| 📊 ROI Analyst | `ima-roi` | Michael | `RF`, `RA`, `RC`, `RB`, `RO` | Forecast, Analyze, Compare, Benchmark, Optimize |
+| 📧 Outreach | `ima-outreach` | Ammar | `OS`, `OD`, `ON`, `OF`, `OT` | Sequence, Draft, Negotiate, Follow-up, Template |
+
+## Core Skills
+
+| Skill | ID | Trigger | Description |
+|-------|-----|---------|-------------|
+| 🆘 IMA Help | `ima-help` | `IH` | Contextual guidance — what to do next |
+| 🎭 Party Mode | `ima-party-mode` | `PM` | Multi-agent collaborative discussions |
+
+## Workflow Phases
+
+IMA follows the influencer marketing lifecycle:
 
 ```
-/ima start                    — Initialize a session, select a client
-/ima client add "Client Name" — Create a new client workspace
+1-setup      → Session init, client creation
+2-research   → Brand audit, competitor analysis, audience research
+3-discovery  → Influencer search, profiling, shortlisting
+4-vetting    → Content quality, authenticity, brand safety
+5-planning   → Campaign design, briefs, budgets, calendars
+6-outreach   → Outreach sequences, negotiation, follow-ups
+7-analysis   → ROI forecasting, performance reports, optimization
 ```
 
----
+## Quick Reference — All Trigger Codes
 
-## Agents
+### Setup (Phase 1)
+| Code | Command | Agent |
+|------|---------|-------|
+| `ST` | Start Session | 🎯 Abu Lahya |
+| `CA` | Client Add | 🎯 Abu Lahya |
+| `CS` | Client Switch | 🎯 Abu Lahya |
+| `CL` | Client List | 🎯 Abu Lahya |
 
-| Agent | Command | Role |
-|-------|---------|------|
-| 🎯 **Orchestrator** | `/ima` | Main coordinator — routes requests, manages clients |
-| 🧙 **IMA Assist** | `/assist` | Guided wizard — asks questions, builds workflows, walks you through everything |
-| 🔍 **Influencer Scout** | `/scout` | Discovers and profiles influencers |
-| 🏢 **Brand Analyst** | `/brand` | Analyzes brands, competitors, and audiences |
-| 📋 **Campaign Strategist** | `/campaign` | Designs end-to-end campaigns |
-| 🔎 **Content Auditor** | `/audit` | Evaluates content quality and brand safety |
-| 📊 **ROI Analyst** | `/roi` | Calculates performance and ROI metrics |
-| 📧 **Outreach Manager** | `/outreach` | Crafts personalized outreach messaging |
+### Research (Phase 2)
+| Code | Command | Agent |
+|------|---------|-------|
+| `BA` | Brand Audit | 🏢 Dylan |
+| `BC` | Brand Competitors | 🏢 Dylan |
+| `BD` | Brand Audience Deep-dive | 🏢 Dylan |
+| `BF` | Brand Fit | 🏢 Dylan |
 
----
+### Discovery (Phase 3)
+| Code | Command | Agent |
+|------|---------|-------|
+| `SD` | Scout Discover | 🔍 Younes |
+| `SP` | Scout Profile | 🔍 Younes |
+| `SC` | Scout Compare | 🔍 Younes |
+| `SE` | Scout Expand | 🔍 Younes |
+| `SN` | Scout Trending | 🔍 Younes |
 
-## All Commands
+### Vetting (Phase 4)
+| Code | Command | Agent |
+|------|---------|-------|
+| `AF` | Audit Full | 🔎 Ahmed |
+| `AC` | Audit Content | 🔎 Ahmed |
+| `AA` | Audit Authenticity | 🔎 Ahmed |
+| `AY` | Audit Safety | 🔎 Ahmed |
+| `AB` | Audit Batch | 🔎 Ahmed |
 
-### Orchestrator (`/ima`)
-| Command | Description |
-|---------|-------------|
-| `/ima start` | Start a new research session |
-| `/ima client add [name]` | Create a new client workspace |
-| `/ima client switch [name]` | Switch to a different client |
-| `/ima client list` | List all client workspaces |
-| `/ima niche [niche]` | Switch niche mid-session |
-| `/ima status` | Show current session status |
-| `/ima export [format]` | Export outputs (csv, markdown, notion, google-sheets) |
-| `/ima route [request]` | Route a free-text request to the best agent |
-| `/ima handoff [agent]` | Hand off research context to another agent |
+### Planning (Phase 5)
+| Code | Command | Agent |
+|------|---------|-------|
+| `CP` | Campaign Plan | 📋 Kushtrim |
+| `CB` | Campaign Brief | 📋 Kushtrim |
+| `CG` | Campaign Budget | 📋 Kushtrim |
+| `CK` | Campaign Calendar | 📋 Kushtrim |
+| `CM` | Campaign Match | 📋 Kushtrim |
 
-### IMA Assist (`/assist`)
-| Command | Description |
-|---------|-------------|
-| `/assist` | Start a new guided session (or resume previous) |
-| `/assist resume` | Explicitly resume last session |
-| `/assist reset` | Clear session and start fresh |
-| `/assist status` | Show current workflow progress |
-| `/assist mode [auto\|guided]` | Switch execution mode mid-session |
+### Outreach (Phase 6)
+| Code | Command | Agent |
+|------|---------|-------|
+| `OS` | Outreach Sequence | 📧 Ammar |
+| `OD` | Outreach Draft | 📧 Ammar |
+| `ON` | Outreach Negotiate | 📧 Ammar |
+| `OF` | Outreach Follow-up | 📧 Ammar |
+| `OT` | Outreach Template | 📧 Ammar |
 
-### Influencer Scout (`/scout`)
-| Command | Description |
-|---------|-------------|
-| `/scout discover [criteria]` | Full discovery pipeline |
-| `/scout profile [handle]` | Detailed profile for one influencer |
-| `/scout compare [handles...]` | Side-by-side comparison |
-| `/scout expand [handle]` | Find similar influencers |
-| `/scout trending [niche]` | Find rising creators |
+### Analysis (Phase 7)
+| Code | Command | Agent |
+|------|---------|-------|
+| `RF` | ROI Forecast | 📊 Michael |
+| `RA` | ROI Analyze | 📊 Michael |
+| `RC` | ROI Compare | 📊 Michael |
+| `RB` | ROI Benchmark | 📊 Michael |
+| `RO` | ROI Optimize | 📊 Michael |
 
-### Brand Analyst (`/brand`)
-| Command | Description |
-|---------|-------------|
-| `/brand audit [brand]` | Full brand analysis |
-| `/brand competitors [brand]` | Competitive landscape mapping |
-| `/brand audience [brand]` | Target audience deep-dive |
-| `/brand fit [brand]` | Define ideal influencer profile |
-| `/brand compare [brand1] [brand2]` | Compare two brands |
-
-### Campaign Strategist (`/campaign`)
-| Command | Description |
-|---------|-------------|
-| `/campaign plan [brief]` | Design a full campaign |
-| `/campaign brief [name]` | Generate a creative brief |
-| `/campaign budget [amount]` | Optimized budget allocation |
-| `/campaign calendar [dates]` | Content calendar |
-| `/campaign match [brief + list]` | Match influencers to campaign |
-
-### Content Auditor (`/audit`)
-| Command | Description |
-|---------|-------------|
-| `/audit full [handle]` | Complete audit (quality + auth + safety) |
-| `/audit content [handle]` | Content quality only |
-| `/audit authenticity [handle]` | Engagement authenticity check |
-| `/audit safety [handle]` | Brand safety assessment |
-| `/audit batch [handles...]` | Quick audit of multiple influencers |
-
-### ROI Analyst (`/roi`)
-| Command | Description |
-|---------|-------------|
-| `/roi forecast [details]` | Pre-campaign ROI projection |
-| `/roi analyze [data]` | Post-campaign performance analysis |
-| `/roi compare [influencers]` | Compare influencer ROI |
-| `/roi benchmark [metrics]` | Benchmark against industry |
-| `/roi optimize [data]` | Budget optimization recommendations |
-
-### Outreach Manager (`/outreach`)
-| Command | Description |
-|---------|-------------|
-| `/outreach sequence [list]` | Full outreach sequence for a list |
-| `/outreach draft [handle]` | Personalized message for one influencer |
-| `/outreach negotiate [scenario]` | Negotiation advice |
-| `/outreach follow-up [handle]` | Draft a follow-up message |
-| `/outreach template [type]` | Generate a reusable template |
-
----
-
-## Capability Matrix
-
-| Task | Primary Agent | Supporting | Workflow |
-|------|:----:|:----:|----------|
-| **Guided workflow** | `/assist` | All agents | *Dynamic* |
-| Find influencers | `/scout` | `/audit` | `discover-influencers` |
-| Vet an influencer | `/audit` | `/scout` | `vet-influencer` |
-| Analyze a brand | `/brand` | `/scout` | `brand-audit` |
-| Plan a campaign | `/campaign` | `/brand`, `/roi` | `campaign-planning` |
-| Competitive intel | `/brand` | `/scout` | `competitive-analysis` |
-| Draft outreach | `/outreach` | `/scout` | `outreach-sequence` |
-| Analyze ROI | `/roi` | `/audit` | `performance-report` |
-
----
+### Anytime
+| Code | Command | Agent |
+|------|---------|-------|
+| `IH` | IMA Help | — |
+| `AS` | Guided Wizard | 🧙 Oussema |
+| `PM` | Party Mode | — |
+| `EX` | Export | 🎯 Abu Lahya |
+| `HO` | Handoff | 🎯 Abu Lahya |
+| `BB` | Brand Compare | 🏢 Dylan |
 
 ## File Structure
 
 ```
 .ima/
-├── agents/          # Agent persona files (read by AI)
-├── workflows/       # Step-by-step research processes
-├── templates/       # Output templates
-├── knowledge-base/  # Platform guides, benchmarks, compliance
-├── checklists/      # Validation checklists
-└── output-adapters/ # CSV, Notion, Sheets, Markdown formatters
-
-clients/
-├── _template/       # Client config template
-└── [client-name]/   # Each client's workspace
-    ├── config.yaml  # Client-specific settings
-    ├── discovery/   # Influencer shortlists
-    ├── audits/      # Vetting reports
-    ├── campaigns/   # Campaign proposals
-    ├── outreach/    # Outreach sequences
-    └── reports/     # Performance reports
+├── agents/                    # Agent persona definitions (YAML)
+│   ├── orchestrator.agent.yaml   # 🎯 Abu Lahya
+│   ├── assist.agent.yaml         # 🧙 Oussema
+│   ├── scout.agent.yaml          # 🔍 Younes
+│   ├── brand.agent.yaml          # 🏢 Dylan
+│   ├── campaign.agent.yaml       # 📋 Kushtrim
+│   ├── auditor.agent.yaml        # 🔎 Ahmed
+│   ├── roi.agent.yaml            # 📊 Michael
+│   ├── outreach.agent.yaml       # 📧 Ammar
+│   └── ima-skill-manifest.yaml   # Master skill registry
+├── tasks/                     # Standalone skills
+│   └── ima-help/              # Contextual help system
+│       ├── SKILL.md
+│       ├── workflow.md
+│       └── ima-help.csv
+├── workflows/                 # Phase-organized workflows
+│   ├── 1-setup/
+│   ├── 2-research/
+│   ├── 3-discovery/
+│   ├── 4-vetting/
+│   ├── 5-planning/
+│   ├── 6-outreach/
+│   ├── 7-analysis/
+│   └── party-mode/
+├── templates/                 # Output templates
+├── checklists/                # Vetting and safety checklists
+├── knowledge-base/            # Reference data
+│   ├── platforms/
+│   ├── metrics/
+│   └── compliance/
+└── output-adapters/           # Obsidian, Notion, Markdown adapters
 ```

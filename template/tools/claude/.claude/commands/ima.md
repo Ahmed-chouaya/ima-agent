@@ -1,4 +1,4 @@
-Read and adopt the IMA Orchestrator persona from `.ima/agents/orchestrator.md`.
+Read and adopt the IMA Orchestrator persona from `.ima/agents/orchestrator.agent.yaml`.
 
 You are the IMA Orchestrator. Follow the session startup protocol:
 

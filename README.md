@@ -1,31 +1,50 @@
 # ima-agent
 
-```text
-    ██╗███╗   ███╗ █████╗
-    ██║████╗ ████║██╔══██╗   FRAMEWORK
-    ██║██╔████╔██║███████║   AGENT
-    ██║██║╚██╔╝██║██╔══██║
-    ██║██║ ╚═╝ ██║██║  ██║
-    ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
-```
+<div align="center">
+<pre style="background:transparent; border:none; display:inline-block; text-align:left; font-family:monospace; margin:0; padding:20px;">
+██╗███╗   ███╗ █████╗
+██║████╗ ████║██╔══██╗   FRAMEWORK
+██║██╔████╔██║███████║   AGENT
+██║██║╚██╔╝██║██╔══██║
+██║██║ ╚═╝ ██║██║  ██║
+╚═╝╚═╝     ╚═╝╚═╝  ╚═╝
+</pre>
+</div>
 
 > 🎯 Install the IMA Framework — Influencer Marketing Agent
 
 **IMA** is an agentic methodology framework that transforms any AI coding tool into a team of influencer marketing specialists. Think [BMAD](https://github.com/bmadcode/BMAD-METHOD), but for influencer marketing.
 
-## Installation
+## ⚡ Installation
+
+The IMA framework is installed via an interactive CLI wizard that sets up your agency workspace, connects your preferred AI tool, and configures API integrations.
 
 ```bash
-# Create a new IMA workspace
-npx ima-agent my-agency
-
-# Or install in the current directory
+# Basic setup wizard (recommended)
 npx ima-agent .
 ```
 
+The interactive wizard will guide you through 4 setup steps:
+1. **AI Tool Selection** (Claude, Cursor, OpenCode, or manual)
+2. **Agency Setup** (Set your agency name and primary influencer niche)
+3. **YouTube API** (Optional: Connect YouTube Data API v3 for the Scout agent)
+4. **Workspace Generation** (Scaffolds the 75+ framework files)
+
+### Automated Install (CI/CD or quick setup):
+To install without the wizard, provide the tool flag and the `--skip-wizard` argument:
+```bash
+npx ima-agent . --tool claude --skip-wizard
+```
+
+### Supported AI Coding Assistants:
+- **Claude Code (Anthropic):** Installs `CLAUDE.md` and custom slash commands
+- **Cursor:** Installs highly optimized `.cursorrules`
+- **OpenCode:** Installs `AGENTS.md` and custom slash commands
+- **Generic:** Works with any tool that can read markdown reference files
+
 ## What You Get
 
-- **7 AI agent personas** — Scout, Brand Analyst, Campaign Strategist, Content Auditor, ROI Analyst, Outreach Manager, and an Orchestrator
+- **8 AI agent personas** — Orchestrator, Guided Wizard, Scout, Brand Analyst, Campaign Strategist, Content Auditor, ROI Analyst, Outreach Manager
 - **7 research workflows** — Discovery, vetting, brand audit, campaign planning, competitive analysis, outreach, performance reporting
 - **Client-based organization** — Separate workspaces for each client with their own configs and outputs
 - **Knowledge base** — Platform guides (Instagram, TikTok, YouTube, X, LinkedIn), engagement benchmarks, pricing guides, FTC compliance, and fraud detection

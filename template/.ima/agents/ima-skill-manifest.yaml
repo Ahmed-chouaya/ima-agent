@@ -1,0 +1,115 @@
+# IMA Agent Skill Manifest
+# Master registry of all IMA agents and their capabilities
+
+agents:
+  - skill_id: ima-orchestrator
+    agent_file: ".ima/agents/orchestrator.agent.yaml"
+    name: Abu Lahya
+    title: Agency Director & Router
+    icon: 🎯
+    triggers: [ST, CA, CS, CL, EX, HO, NS, SS]
+    primary_workflows:
+      - "Start Session"
+      - "Client Management"
+      - "Request Routing"
+      - "Multi-Agent Coordination"
+
+  - skill_id: ima-assist
+    agent_file: ".ima/agents/assist.agent.yaml"
+    name: Oussema
+    title: Guided Workflow Advisor
+    icon: 🧙
+    triggers: [AS, AR, AM, AX, AE]
+    primary_workflows:
+      - "Guided Wizard"
+      - "Smart Intent Discovery"
+      - "Progress Tracking"
+
+  - skill_id: ima-scout
+    agent_file: ".ima/agents/scout.agent.yaml"
+    name: Younes
+    title: Influencer Discovery Specialist
+    icon: 🔍
+    triggers: [SD, SP, SC, SE, ST]
+    primary_workflows:
+      - "Discover Influencers"
+      - "Profile Influencer"
+      - "Compare Influencers"
+      - "Expand Similar"
+      - "Trending Creators"
+
+  - skill_id: ima-brand
+    agent_file: ".ima/agents/brand.agent.yaml"
+    name: Dylan
+    title: Brand Strategist
+    icon: 🏢
+    triggers: [BA, BC, BD, BF, BB]
+    primary_workflows:
+      - "Brand Audit"
+      - "Competitive Analysis"
+      - "Audience Deep-dive"
+      - "Brand-Influencer Fit"
+      - "Brand Compare"
+
+  - skill_id: ima-campaign
+    agent_file: ".ima/agents/campaign.agent.yaml"
+    name: Kushtrim
+    title: Campaign Architect
+    icon: 📋
+    triggers: [CP, CB, CG, CC, CM]
+    primary_workflows:
+      - "Campaign Plan"
+      - "Creative Brief"
+      - "Budget Allocation"
+      - "Content Calendar"
+      - "Influencer-Campaign Match"
+
+  - skill_id: ima-auditor
+    agent_file: ".ima/agents/auditor.agent.yaml"
+    name: Ahmed
+    title: Content & Authenticity Auditor
+    icon: 🔎
+    triggers: [AF, AC, AA, AS, AB]
+    primary_workflows:
+      - "Full Audit"
+      - "Content Quality"
+      - "Authenticity Check"
+      - "Brand Safety"
+      - "Batch Audit"
+
+  - skill_id: ima-roi
+    agent_file: ".ima/agents/roi.agent.yaml"
+    name: Michael
+    title: Performance & ROI Analyst
+    icon: 📊
+    triggers: [RF, RA, RC, RB, RO]
+    primary_workflows:
+      - "ROI Forecast"
+      - "Performance Analysis"
+      - "Influencer Comparison"
+      - "Benchmark Analysis"
+      - "Budget Optimization"
+
+  - skill_id: ima-outreach
+    agent_file: ".ima/agents/outreach.agent.yaml"
+    name: Ammar
+    title: Outreach & Relationship Manager
+    icon: 📧
+    triggers: [OS, OD, ON, OF, OT]
+    primary_workflows:
+      - "Outreach Sequence"
+      - "Outreach Draft"
+      - "Negotiation Advice"
+      - "Follow-up Message"
+      - "Outreach Template"
+
+skills:
+  - skill_id: ima-help
+    skill_file: ".ima/tasks/ima-help/SKILL.md"
+    description: "Contextual guidance — what to do next"
+    trigger: IH
+
+  - skill_id: ima-party-mode
+    skill_file: ".ima/workflows/party-mode/workflow.md"
+    description: "Multi-agent collaborative discussions"
+    trigger: PM

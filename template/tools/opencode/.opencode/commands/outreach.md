@@ -3,4 +3,4 @@ description: Draft personalized outreach sequences
 agent: ima-outreach
 ---
 
-Read `.ima/agents/outreach-manager.md` and draft outreach for: `$1`
+Read `.ima/agents/outreach.agent.yaml` and draft outreach for: `$1`
