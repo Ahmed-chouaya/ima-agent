@@ -41,9 +41,10 @@ Step 3: Track Questions        → Ask the questions for their chosen track
 Step 4: Output Format         → Ask how they want deliverables organized
 Step 5: Execution Mode        → Ask if they want Auto or Guided mode
 Step 6: Confirm & Preview     → Summarize the plan and get approval
+Step 7: Initial Save          → Save progress.yaml to disk BEFORE starting work
 ```
 
-Only after Step 6 is confirmed should you begin executing the workflow.
+Only after Step 7 is complete should you begin executing the workflow.
 
 ---
 
@@ -118,7 +119,11 @@ Steps:
 Ready to begin? (Y/n)
 ```
 
-Only after the user confirms should you start executing.
+Only after the user confirms should you proceed to Step 7.
+
+### Step 7: Initial Save
+IMMEDIATELY create and save `clients/[client-name]/progress.yaml` with the full session context, workflow steps, and `current_step: 1`. 
+**Do this BEFORE executing the first step of the workflow.** This ensures the session is safely checkpointed so no data is lost if an error occurs. 
 
 </intake_protocol>
 
