@@ -38,7 +38,17 @@ Based on the niche from `config.yaml` and the user's specific request:
 ### Phase 2: Discovery Execution
 Conduct research using available tools:
 
-**Web Search Strategy:**
+**API-First Strategy (check `config.yaml` → `integrations.influencer_api`):**
+If an influencer data API is configured (Modash, Bright Data, Inbeat, etc.):
+1. Use the API to search for influencers matching the criteria (niche, platform, follower range, ER)
+2. Retrieve profile data, metrics, and audience demographics directly
+3. This is faster, cheaper, and more accurate than web research — always prefer API when available
+4. Fall back to web research only for profiles not found in the API or to verify data
+
+If no API is configured and the user needs 50+ influencers, suggest setting one up:
+*"For a search this size, connecting an influencer API would save a lot of time and tokens. Want me to help you set one up? It only takes a minute."*
+
+**Web Search Strategy (fallback or small searches):**
 - Search `[niche] influencers [platform] [year]` for curated lists
 - Search `top [niche] creators [platform]` for editorial picks
 - Search `[niche] micro influencers to follow` for micro-tier focused

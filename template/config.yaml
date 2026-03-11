@@ -86,6 +86,13 @@ vetting:
 # ── Optional Integrations ───────────────────────
 # These are optional power-ups. The framework works fully without them.
 integrations:
+  # Influencer data API — recommended for searches of 50+ influencers
+  # The /assist agent can set this up for you automatically in chat
+  influencer_api:
+    enabled: false
+    service: ""                   # modash, brightdata, inbeat, custom
+    # api_key: ""
+    # mcp_server: ""              # If using an MCP server instead of REST API
   notion:
     enabled: false
     # api_key: ""

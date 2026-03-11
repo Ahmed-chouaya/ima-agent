@@ -1,6 +1,6 @@
 {
   "name": "ima-agent",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "IMA Framework — Influencer Marketing Agent. An agentic methodology framework for influencer marketing research and analysis.",
   "bin": {
     "ima-agent": "bin/ima-agent.js"

@@ -138,9 +138,30 @@ Each intent has a tailored set of questions. Ask them conversationally — not a
 3. What follower range? *(Offer tiers with pros/cons if user is unsure)*
 4. What's the campaign goal? *(Awareness, Engagement, Conversions, Content Creation)*
 5. Target audience demographics? *(Age, gender, location — or "match the brand's audience")*
-6. How many influencers do you need?
+6. How many influencers do you need? → **If 50+, trigger the Large Search Warning below**
 7. Any budget constraints for influencer fees?
 8. Any specific requirements? *(e.g., must be US-based, must have done beauty sponsorships before)*
+
+**⚠️ Large Search Warning (50+ influencers):**
+When the user asks for 50 or more influencers, show this warning:
+
+```
+⚠️ Heads up! Searching for [N] influencers using web research alone
+will use a lot of AI tokens and may take multiple sessions.
+
+For large searches, I'd recommend connecting an influencer data API.
+This will make the search faster, cheaper, and more accurate:
+
+1. 🔍 Modash — Full influencer database (250M+ profiles), best overall
+2. 📊 Bright Data — Social media scraping, cheapest option
+3. 📡 Inbeat — Great for micro-influencer search
+4. ⏭️  Skip — I'll do my best with web research (may need multiple sessions)
+
+Would you like to set up an API? I'll walk you through it step by step.
+```
+
+If the user wants to set up an API, follow the **API Setup Flow** section below.
+If they choose Skip, proceed normally but use the batch strategy (wide discovery first, then deep-profile in groups of 10-15).
 
 **When user says "I don't know" to follower range:**
 ```
@@ -258,6 +279,78 @@ Ask open-ended:
 - Construct a custom workflow from available agents
 
 </questioning_tracks>
+
+<api_setup_flow>
+
+## API Setup Flow
+
+When the user wants to set up an API (triggered by the Large Search Warning or anytime they ask), walk them through it conversationally. **The user may not be technical** — never ask them to edit config files. You do it for them.
+
+### Step 1: Choose a Service
+
+```
+Which service would you like to connect?
+
+1. 🔍 Modash — Best overall. Search 250M+ influencer profiles with filters
+   → Get API key at: https://modash.io
+2. 📊 Bright Data — Cheapest. Scrapes social profiles directly
+   → Get API key at: https://brightdata.com
+3. 📡 Inbeat — Great for micro-influencer search
+   → Get API key at: https://inbeat.co
+4. 🔌 Other — I have a different influencer API or MCP server
+```
+
+### Step 2: Get the API Key
+
+Say:
+*"Great choice! Here's how to get your API key:"*
+
+**For Modash:**
+1. Go to https://modash.io and create an account
+2. Go to Settings → API
+3. Copy your API key
+4. Paste it here in the chat
+
+**For Bright Data:**
+1. Go to https://brightdata.com and create an account
+2. Go to your Dashboard → API Settings
+3. Copy your API token
+4. Paste it here in the chat
+
+**For Inbeat:**
+1. Go to https://inbeat.co and create an account
+2. Go to Account → API Access
+3. Copy your API key
+4. Paste it here in the chat
+
+**For Other / MCP:**
+Ask: *"Is this an MCP server or a REST API? What's the name of the service?"*
+
+### Step 3: Save the Key
+
+When the user pastes their API key:
+
+1. **Immediately write it to `config.yaml`** under the `integrations.influencer_api` section
+2. Confirm: *"✅ API key saved to your config! I'll use [Service] for large searches from now on."*
+3. **Never display the full key back** — just show the first 4 and last 4 characters for confirmation
+
+Example update to `config.yaml`:
+```yaml
+integrations:
+  influencer_api:
+    enabled: true
+    service: "modash"          # modash, brightdata, inbeat, custom
+    api_key: "their-key-here"
+    # mcp_server: ""           # If using MCP instead
+```
+
+### Step 4: Test the Connection
+
+If the tool supports it, make a simple test API call:
+- *"Let me test the connection... ✅ Connected! I can see [X] profiles available."*
+- If it fails: *"Hmm, that didn't work. Can you double-check the key? Here's what to look for..."*
+
+</api_setup_flow>
 
 <execution_modes>
 
