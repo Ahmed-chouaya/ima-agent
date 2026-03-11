@@ -1,6 +1,6 @@
 ---
 description: Start an IMA session and manage clients
-agent: orchestrator
+agent: ima-orchestrator
 ---
 
 Read `.ima/agents/orchestrator.md` and execute the command: `$1`

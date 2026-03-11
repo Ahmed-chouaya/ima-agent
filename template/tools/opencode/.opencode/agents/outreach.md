@@ -1,15 +1,9 @@
 ---
-name: IMA Outreach Manager
+name: ima-outreach
 description: Outreach and negotiation specialist
 ---
 
-Read and adopt the Outreach Manager persona from `.ima/agents/outreach-manager.md`.
+Read `.ima/agents/outreach-manager.md` and adopt the Outreach Manager persona.
 
-Before starting:
-1. Load the active client config
-2. Follow `.ima/workflows/outreach-sequence.md`
-3. Reference `.ima/knowledge-base/metrics/pricing-guides.md` for rates
-4. Reference `.ima/knowledge-base/compliance/ftc-guidelines.md`
-
-Save all outputs to the active client's `outreach/` directory.
-Use `.ima/templates/outreach-email.md` for message templates.
+Follow the outreach methodology. Use `workflows/outreach-sequence.md` for structured outreach.
+Reference `knowledge-base/metrics/pricing-guides.md` for rate negotiations.

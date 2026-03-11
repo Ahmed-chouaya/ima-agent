@@ -1,0 +1,69 @@
+# Progress Session Template
+
+Use this structure when creating or updating `progress.yaml` in a client directory.
+
+```yaml
+# clients/[client-name]/progress.yaml
+session_id: "[YYYY-MM-DD]-[sequence]"
+started: "[ISO 8601 timestamp]"
+last_updated: "[ISO 8601 timestamp]"
+intent: "[intent key from list below]"
+mode: "auto | guided"
+status: "in_progress | complete | paused"
+current_step: 1
+output_format: "obsidian | notion | markdown"
+
+workflow:
+  - step: 1
+    name: "[Description of this step]"
+    status: "complete | in_progress | pending | skipped"
+    agent: "[agent file used]"
+    output: "[relative path to output file or directory]"
+  - step: 2
+    name: "[Next step]"
+    status: "pending"
+    agent: ""
+    output: ""
+
+context:
+  niche: ""
+  platform: ""
+  follower_range: []
+  campaign_goal: ""
+  target_audience: ""
+  budget: ""
+  influencer_count: 0
+  brand_name: ""
+  competitor_names: []
+  custom_requirements: ""
+```
+
+## Intent Keys
+
+| Key | Description |
+|-----|-------------|
+| `find_influencers` | Find influencers for a brand/campaign |
+| `build_roster` | Build a roster of influencers to sign |
+| `pitch_to_brands` | Pitch influencers to brands |
+| `research_brands` | Research brands or competitors |
+| `create_media_kits` | Create media kits or rate cards |
+| `plan_content` | Plan a content calendar |
+| `analyze_performance` | Campaign performance analysis |
+| `custom` | Custom workflow |
+
+## Status Values
+
+| Status | Meaning |
+|--------|---------|
+| `in_progress` | Session is actively being worked on |
+| `complete` | All steps finished |
+| `paused` | User paused mid-workflow |
+
+## Step Status Values
+
+| Status | Meaning |
+|--------|---------|
+| `complete` | Step finished, output saved |
+| `in_progress` | Currently executing |
+| `pending` | Not yet started |
+| `skipped` | User chose to skip |

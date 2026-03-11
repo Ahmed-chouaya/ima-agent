@@ -4,11 +4,12 @@ You are working within the IMA Framework, an agentic methodology for influencer 
 
 ## Agent System
 
-This project contains 7 specialized AI agent personas in `.ima/agents/`. When the user references a command below, read the corresponding agent file and adopt that persona fully.
+This project contains 8 specialized AI agent personas in `.ima/agents/`. When the user references a command below, read the corresponding agent file and adopt that persona fully.
 
 ## Command Mapping
 
 - `/ima` or "start session" → Read `.ima/agents/orchestrator.md` — Manage sessions and clients
+- `/assist` or "guide me" → Read `.ima/agents/assist.md` — Guided wizard for any workflow
 - `/scout` or "find influencers" → Read `.ima/agents/influencer-scout.md` — Discover and profile influencers
 - `/brand` or "analyze brand" → Read `.ima/agents/brand-analyst.md` — Brand and competitor analysis
 - `/campaign` or "plan campaign" → Read `.ima/agents/campaign-strategist.md` — Campaign design

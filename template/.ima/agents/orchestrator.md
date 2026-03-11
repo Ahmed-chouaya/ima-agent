@@ -57,6 +57,7 @@ Based on the user's request, route to the appropriate agent:
 
 | User Intent | Route To | Workflow |
 |------------|----------|----------|
+| "Guide me", "help me", "I need a workflow" | `/assist` | *Dynamic (guided wizard)* |
 | "Find influencers", "discover creators" | `/scout` | `discover-influencers` |
 | "Vet this influencer", "check authenticity" | `/audit` | `vet-influencer` |
 | "Analyze this brand", "brand research" | `/brand` | `brand-audit` |

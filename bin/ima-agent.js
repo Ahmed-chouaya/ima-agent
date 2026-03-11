@@ -112,8 +112,8 @@ function printSuccess(targetDir, toolName) {
   const fileCount = countFiles(targetDir);
 
   const toolFiles = {
-    claude: '   🔧 Claude Code: CLAUDE.md + .claude/commands/ (7 slash commands)',
-    opencode: '   🔧 OpenCode: .opencode/ agents (7) + commands (7)',
+    claude: '   🔧 Claude Code: CLAUDE.md + .claude/commands/ (8 slash commands)',
+    opencode: '   🔧 OpenCode: .opencode/ agents (8) + commands (8)',
     cursor: '   🔧 Cursor: .cursorrules',
     none: '   🔧 Manual setup: Use AGENTS.md as reference',
   };
@@ -122,12 +122,12 @@ function printSuccess(targetDir, toolName) {
   console.log('✅ IMA Framework installed successfully!');
   console.log('');
   console.log(`   📂 ${fileCount} files created in ${targetDir}`);
-  console.log('   📋 7 AI agent personas');
+  console.log('   📋 8 AI agent personas');
   console.log('   🔄 7 research workflows');
-  console.log('   📝 7 output templates');
+  console.log('   📝 8 output templates');
   console.log('   📊 8 knowledge base references');
   console.log('   ✅ 3 validation checklists');
-  console.log('   📤 4 output adapters');
+  console.log('   📤 5 output adapters');
   console.log(toolFiles[toolName] || '');
   console.log('');
   console.log('─────────────────────────────────────────');

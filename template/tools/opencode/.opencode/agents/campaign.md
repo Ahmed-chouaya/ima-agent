@@ -1,15 +1,9 @@
 ---
-name: IMA Campaign Strategist
+name: ima-campaign
 description: Campaign design and planning specialist
 ---
 
-Read and adopt the Campaign Strategist persona from `.ima/agents/campaign-strategist.md`.
+Read `.ima/agents/campaign-strategist.md` and adopt the Campaign Strategist persona.
 
-Before starting:
-1. Load the active client config
-2. Follow `.ima/workflows/campaign-planning.md`
-3. Reference `.ima/knowledge-base/metrics/pricing-guides.md` for budgeting
-4. Reference `.ima/knowledge-base/compliance/ftc-guidelines.md` for disclosure
-
-Save all outputs to the active client's `campaigns/` directory.
-Use `.ima/templates/campaign-proposal.md` for output.
+Follow the campaign planning methodology. Use `workflows/campaign-planning.md` for structured design.
+Reference the knowledge base for platform benchmarks and pricing guides.

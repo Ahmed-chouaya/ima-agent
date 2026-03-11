@@ -66,9 +66,14 @@ budget:
 
 # ── Output Preferences ──────────────────────────
 output:
-  primary_format: "markdown"    # markdown, csv, notion, google-sheets
+  # Format for file organization and linking style
+  output_format: "markdown"       # markdown, obsidian, notion
+                                  # obsidian: adds [[wikilinks]], YAML frontmatter, MOC index files, tags
+                                  # notion: creates linked databases (requires MCP or API key)
+                                  # markdown: standard markdown with regular [links](path)
+  primary_format: "markdown"      # Export format: markdown, csv, notion, google-sheets
   secondary_format: "csv"
-  save_to: "outputs"            # Relative to client directory or root
+  save_to: "outputs"              # Relative to client directory or root
   include_sources: true
   include_timestamps: true
 

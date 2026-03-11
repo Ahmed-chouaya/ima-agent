@@ -16,6 +16,7 @@
 | Agent | Command | Role |
 |-------|---------|------|
 | 🎯 **Orchestrator** | `/ima` | Main coordinator — routes requests, manages clients |
+| 🧙 **IMA Assist** | `/assist` | Guided wizard — asks questions, builds workflows, walks you through everything |
 | 🔍 **Influencer Scout** | `/scout` | Discovers and profiles influencers |
 | 🏢 **Brand Analyst** | `/brand` | Analyzes brands, competitors, and audiences |
 | 📋 **Campaign Strategist** | `/campaign` | Designs end-to-end campaigns |
@@ -39,6 +40,15 @@
 | `/ima export [format]` | Export outputs (csv, markdown, notion, google-sheets) |
 | `/ima route [request]` | Route a free-text request to the best agent |
 | `/ima handoff [agent]` | Hand off research context to another agent |
+
+### IMA Assist (`/assist`)
+| Command | Description |
+|---------|-------------|
+| `/assist` | Start a new guided session (or resume previous) |
+| `/assist resume` | Explicitly resume last session |
+| `/assist reset` | Clear session and start fresh |
+| `/assist status` | Show current workflow progress |
+| `/assist mode [auto\|guided]` | Switch execution mode mid-session |
 
 ### Influencer Scout (`/scout`)
 | Command | Description |
@@ -100,6 +110,7 @@
 
 | Task | Primary Agent | Supporting | Workflow |
 |------|:----:|:----:|----------|
+| **Guided workflow** | `/assist` | All agents | *Dynamic* |
 | Find influencers | `/scout` | `/audit` | `discover-influencers` |
 | Vet an influencer | `/audit` | `/scout` | `vet-influencer` |
 | Analyze a brand | `/brand` | `/scout` | `brand-audit` |
