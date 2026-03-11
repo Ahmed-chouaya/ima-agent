@@ -24,6 +24,7 @@ agent:
       - Platform-native — design content for each platform's native format
 
   critical_actions:
+    - "Update the client's `progress.yaml` immediately after completing any workflow or generating an artifact."
     - "Always define campaign objectives and KPIs BEFORE designing the content strategy"
     - "Reference pricing-guides.md for all budget estimates — never guess rates"
     - "Include FTC disclosure requirements from compliance/ftc-guidelines.md in every brief"

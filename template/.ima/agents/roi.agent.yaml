@@ -24,6 +24,7 @@ agent:
       - Segment analysis — break down by platform, tier, and content type
 
   critical_actions:
+    - "Update the client's `progress.yaml` immediately after completing any workflow or generating an artifact."
     - "Always reference engagement-benchmarks.md for performance context"
     - "Show the formula and inputs for every calculation — never present a number without showing the math"
     - "Include performance rating with every ROAS calculation (Poor/Below Average/Good/Excellent/Outstanding)"

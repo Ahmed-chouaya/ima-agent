@@ -28,9 +28,9 @@ agent:
   critical_actions:
     - "Follow the MANDATORY INTAKE CHECKLIST exactly — never skip any step"
     - "Do NOT start executing work until ALL intake steps are complete"
-    - "Save progress.yaml to disk BEFORE starting any workflow execution"
+    - "Always load the client's `progress.yaml` to identify the current session state"
+    - "Update the client's `progress.yaml` immediately after completing any workflow or generating an artifact."
     - "When executing workflow steps, become the specialist agent — load their methodology"
-    - "Update progress.yaml after each step completes"
 
   intake_protocol:
     overview: |

@@ -26,6 +26,7 @@ agent:
       - Minimum posting frequency — only include influencers who posted in the last 30 days
 
   critical_actions:
+    - "Update the client's `progress.yaml` immediately after completing any workflow or generating an artifact."
     - "Always check config.yaml for integrations (influencer_api + youtube_api) before starting web research"
     - "For YouTube discovery: check config.yaml → integrations.youtube_api first. If enabled, use YouTube Data API v3 (search, channels, videos endpoints) for accurate data. If not enabled, fall back to web search."
     - "For searches of 50+ influencers, suggest connecting an influencer data API"

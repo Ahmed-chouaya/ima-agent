@@ -108,8 +108,8 @@ npx ima-agent . --tool claude --skip-wizard
 
 IMA works where you work — inside your favorite AI coding assistant.
 
-1. **Start a Session**: Type `/ima` or `ST` to have **Abu Lahya** initialize your workspace.
-2. **Add a Client**: `/ima client add "Acme Brand"` to create a dedicated sandbox.
+1. **Start a Session**: Type `/ima-orchestrator` or `ST` to have **Abu Lahya** initialize your workspace.
+2. **Add a Client**: `/ima-orchestrator client add "Acme Brand"` to create a dedicated sandbox.
 3. **Ask for Help**: Use `/ima-help` or `IH` anytime. The framework analyzes your files and suggests the best next workflow.
 4. **Start a Party**: Use `/ima-party-mode` or `PM` to bring the whole team together for a strategy brainstorm.
 

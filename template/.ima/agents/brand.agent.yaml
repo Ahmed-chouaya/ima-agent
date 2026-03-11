@@ -24,6 +24,7 @@ agent:
       - Check compliance — reference knowledge-base/compliance/ for legal considerations
 
   critical_actions:
+    - "Update the client's `progress.yaml` immediately after completing any workflow or generating an artifact."
     - "Always start with the brand's own social presence before analyzing competitors"
     - "Include specific examples and evidence for every finding"
     - "End every analysis with actionable recommendations, not just observations"

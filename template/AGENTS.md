@@ -41,16 +41,14 @@ IMA follows the influencer marketing lifecycle:
 ### Setup (Phase 1)
 | Code | Command | Agent |
 |------|---------|-------|
-| `ST` | Start Session | 🎯 Abu Lahya |
-| `CA` | Client Add | 🎯 Abu Lahya |
-| `CS` | Client Switch | 🎯 Abu Lahya |
-| `CL` | Client List | 🎯 Abu Lahya |
+| `ST` | Start Session | 🎯 Abu Lahya | `/ima-orchestrator start` |
+| `CA` | Client Add | 🎯 Abu Lahya | `/ima-orchestrator client add` |
+| `CS` | Client Switch | 🎯 Abu Lahya | `/ima-orchestrator client switch` |
+| `CL` | Client List | 🎯 Abu Lahya | `/ima-orchestrator client list` |
 
 ### Research (Phase 2)
 | Code | Command | Agent |
 |------|---------|-------|
-| `BA` | Brand Audit | 🏢 Dylan |
-| `BC` | Brand Competitors | 🏢 Dylan |
 | `BD` | Brand Audience Deep-dive | 🏢 Dylan |
 | `BF` | Brand Fit | 🏢 Dylan |
 
@@ -145,3 +143,10 @@ IMA follows the influencer marketing lifecycle:
 │   └── compliance/
 └── output-adapters/           # Obsidian, Notion, Markdown adapters
 ```
+## Automated Progress Tracking
+
+IMA automatically tracks your research progress in `progress.yaml` within each client directory.
+
+- **Initialization**: `ima-orchestrator` (Abu Lahya) creates or loads this file whenever a session starts.
+- **Auto-Updates**: Every specialist agent is mandated to update `progress.yaml` immediately after completing a workflow or generating an artifact.
+- **Visibility**: Use `ima-help` or `ima-assist` to see a summary of your current progress and recommended next steps based on this file.

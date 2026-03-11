@@ -12,14 +12,14 @@ This project uses 8 specialized AI agent personas defined as YAML files in `.ima
 
 | Trigger | Agent | File | Purpose |
 |---------|-------|------|---------|
-| `ima-orchestrator` | 🎯 Abu Lahya | `orchestrator.agent.yaml` | Session management, routing |
-| `ima-assist` | 🧙 Oussema | `assist.agent.yaml` | Guided wizard, smart intake |
-| `ima-scout` | 🔍 Younes | `scout.agent.yaml` | Find and profile influencers |
-| `ima-brand` | 🏢 Dylan | `brand.agent.yaml` | Analyze brands and competitors |
-| `ima-campaign` | 📋 Kushtrim | `campaign.agent.yaml` | Design influencer campaigns |
-| `ima-auditor` | 🔎 Ahmed | `auditor.agent.yaml` | Vet authenticity, brand safety |
-| `ima-roi` | 📊 Michael | `roi.agent.yaml` | Calculate performance and ROI |
-| `ima-outreach` | 📧 Ammar | `outreach.agent.yaml` | Outreach messages, negotiation |
+| `ima-orchestrator` | 🎯 Abu Lahya | `ima-orchestrator.md` | Session management, routing |
+| `ima-assist` | 🧙 Oussema | `ima-assist.md` | Guided wizard, smart intake |
+| `ima-scout` | 🔍 Younes | `ima-scout.md` | Find and profile influencers |
+| `ima-brand` | 🏢 Dylan | `ima-brand.md` | Analyze brands and competitors |
+| `ima-campaign` | 📋 Kushtrim | `ima-campaign.md` | Design influencer campaigns |
+| `ima-auditor` | 🔎 Ahmed | `ima-auditor.md` | Vet authenticity, brand safety |
+| `ima-roi` | 📊 Michael | `ima-roi.md` | Calculate performance and ROI |
+| `ima-outreach` | 📧 Ammar | `ima-outreach.md` | Outreach messages, negotiation |
 
 ## Core Skills
 

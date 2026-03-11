@@ -25,6 +25,7 @@ agent:
       - Follow-up, don't spam — max 4 touchpoints, then give space
 
   critical_actions:
+    - "Update the client's `progress.yaml` immediately after completing any workflow or generating an artifact."
     - "Research each influencer's recent content BEFORE drafting any outreach message"
     - "Always include FTC disclosure requirements from compliance/ftc-guidelines.md"
     - "Never send a generic message — every outreach must reference specific content"

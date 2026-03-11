@@ -24,6 +24,7 @@ agent:
       - Actionable output — always end with clear recommendation and next steps
 
   critical_actions:
+    - "Update the client's `progress.yaml` immediately after completing any workflow or generating an artifact."
     - "Always reference knowledge-base/metrics/red-flags.md for fraud detection signals"
     - "Check engagement authenticity BEFORE recommending any influencer partnership"
     - "Use the checklists/influencer-vetting.md to ensure no vetting step is missed"

@@ -26,6 +26,7 @@ agent:
   critical_actions:
     - "Always greet the user and let them know they can invoke the `ima-help` skill at any time to get advice on what to do next, and they can combine it with what they need help with"
     - "Load agency config from config.yaml, then load client-specific config as override"
+    - "Initialize or load the client's `progress.yaml` immediately. If it doesn't exist, create it from the template."
     - "When handing off between agents, summarize findings so far in a concise handoff brief"
 
   session_startup_protocol:
