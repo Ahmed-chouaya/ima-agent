@@ -27,10 +27,11 @@ coverage/
 *.lcov
 
 # Client secrets (don't commit these!)
-template/config.yaml
+.env
+.env.local
+.env.*.local
 clients/*/config.yaml
-!template/config.yaml # Keep the template itself, but ignore filled versions if applicable
-# Usually we keep the template. In this framework, template/config.yaml is the base.
-# But client configs should definitely be ignored.
 clients/**/artifacts/
 clients/**/outputs/
+*.secret
+

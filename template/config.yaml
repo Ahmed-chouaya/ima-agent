@@ -92,7 +92,7 @@ integrations:
   # Get a free key at: https://console.cloud.google.com → APIs → YouTube Data API v3
   youtube_api:
     enabled: false
-    # api_key: ""
+    # api_key: "YOUR_KEY_HERE"  # Use environment variable IMA_YOUTUBE_API_KEY for security
     # Rate limit: 10,000 units/day (free tier)
     # Endpoints: search, channels, videos, commentThreads
 

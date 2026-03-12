@@ -52,17 +52,17 @@ agent:
     phase_2_discovery: |
       API-First Strategy — check config.yaml integrations before web search:
       
-      YouTube Discovery (check config.yaml → integrations.youtube_api):
-      If youtube_api.enabled is true and api_key is set:
-      - Use YouTube Data API v3 search endpoint to find channels by keyword/topic
-      - Use channels endpoint to get exact subscriber counts, video counts, descriptions
-      - Use videos endpoint to analyze recent uploads (views, likes, comments)
-      - Use commentThreads endpoint for comment quality and sentiment analysis
-      - This gives accurate data vs. estimates from web scraping
-      If youtube_api is not enabled:
-      - Fall back to web search: site:youtube.com [niche] [keywords]
-      - Estimate metrics from publicly visible data
-      - Note in output: "YouTube metrics are estimated — connect YouTube API for exact data"
+      YouTube Discovery (MANDATORY: check for API access before any web research):
+      1. **Check Credentials**: Look for `youtube_api.api_key` in `config.yaml`. 
+         - NOTE: If the key is not in the config, check if `IMA_YOUTUBE_API_KEY` environment variable is available.
+      2. **API Execution**: If `enabled: true` and a key is found:
+         - Use YouTube Data API v3 search endpoint to find channels.
+         - **CRITICAL**: When calling API URLs via `WebFetch`, you MUST include the `format: "text"` argument (e.g., `WebFetch url="...", format="text"`) to satisfy the tool schema.
+         - Use channels, videos, and commentThreads endpoints for exact statistics (subscribers, views, sentiment).
+         - This provides verified data. **NEVER** go to web search if the API is configured and functional.
+      3. **Web Search Fallback**: ONLY if `youtube_api.enabled` is false, the key is missing, or the API call explicitly fails:
+         - Use web search: `site:youtube.com [niche] [keywords]`
+         - Note in output: "YouTube metrics are estimated (API not connected)."
       
       General Influencer API (check config.yaml → integrations.influencer_api):
       If API configured — use it for faster, cheaper, more accurate results.
